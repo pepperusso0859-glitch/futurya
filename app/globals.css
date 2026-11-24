@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: 'Space Grotesk', 'system-ui', sans-serif;
+    --font-body: 'DM Sans', 'system-ui', sans-serif;
+  }
+
+  * {
+    @apply border-surface-card;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-surface-darker text-brand-50 font-body antialiased;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  ::selection {
+    @apply bg-accent-amber/30 text-brand-50;
+  }
+
+  /* Focus styles for accessibility */
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent-amber ring-offset-2 ring-offset-surface-darker;
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-amber focus-visible:ring-offset-2 focus-visible:ring-offset-surface-darker disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply btn bg-accent-amber text-surface-darker hover:bg-accent-amberHover active:scale-[0.98] shadow-lg shadow-accent-amber/20;
+  }
+
+  .btn-secondary {
+    @apply btn bg-surface-card text-brand-50 border border-surface-cardHover hover:bg-surface-cardHover hover:border-brand-800 active:scale-[0.98];
+  }
+
+  .btn-outline {
+    @apply btn border-2 border-accent-amber text-accent-amber hover:bg-accent-amber/10 active:scale-[0.98];
+  }
+
+  .btn-ghost {
+    @apply btn text-brand-300 hover:text-brand-50 hover:bg-surface-card active:scale-[0.98];
+  }
+
+  .card {
+    @apply bg-surface-card rounded-2xl border border-surface-cardHover overflow-hidden transition-all duration-300 hover:border-brand-800 hover:shadow-2xl hover:shadow-accent-amber/5;
+  }
+
+  .card-interactive {
+    @apply card cursor-pointer hover:scale-[1.02];
+  }
+
+  .section {
+    @apply py-16 sm:py-24 lg:py-32;
+  }
+
+  .section-title {
+    @apply font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-50 tracking-tight;
+  }
+
+  .section-subtitle {
+    @apply mt-4 text-lg sm:text-xl text-brand-300 max-w-2xl;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-accent-amber via-amber-300 to-accent-copper bg-clip-text text-transparent;
+  }
+
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animate-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animate-delay-500 {
+    animation-delay: 500ms;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
