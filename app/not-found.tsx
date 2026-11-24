@@ -23,13 +23,18 @@ export default function NotFound() {
               <span className="text-accent-amber">Ma il tuo percorso sì.</span>
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button size="lg" asChild>
-                <Link href="/">Torna alla Home</Link>
-              </Button>
-              <Button variant="outline" size="lg" asChild>
-                <Link href="#test">Fai il Test</Link>
-              </Button>
-            </div>
+            <Link
+  href="/"
+  className="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg rounded-xl bg-accent-amber text-surface-darker font-medium hover:bg-accent-amberHover transition-colors"
+>
+  Torna alla Home
+</Link>
+<Link
+  href="/#test"
+  className="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg rounded-xl border-2 border-accent-amber text-accent-amber font-medium hover:bg-accent-amber/10 transition-colors"
+>
+  Fai il Test
+</Link>
           </motion.div>
         </div>
       </main>
