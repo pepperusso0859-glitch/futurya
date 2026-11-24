@@ -3,8 +3,8 @@
 import { useState, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
-  Male,
-  Female,
+  User,
+UserCircle,
   Target,
   Activity,
   Clock,
@@ -230,7 +230,7 @@ Il tuo coach ti contatterà entro 24h per definire il test diagnostico completo 
                     ? 'bg-accent-amber text-surface-darker'
                     : 'bg-surface-cardHover text-brand-400'
                 )}>
-                  {g === 'male' ? <Male className="h-8 w-8" /> : <Female className="h-8 w-8" />}
+{g === 'male' ? <User className="h-8 w-8" /> : <UserCircle className="h-8 w-8" />}
                 </div>
                 <div className="text-center">
                   <span className={cn('font-display font-semibold text-lg', formData.gender === g ? 'text-brand-50' : 'text-brand-300')}>
