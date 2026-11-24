@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Dumbbell, MapPin, Phone, Mail, Clock, ArrowRight, CheckCircle2, Zap, HeartPulse, Users, ChevronRight } from 'lucide-react'
+import { Dumbbell, MapPin, Phone, Mail, Clock, ArrowRight, CheckCircle2, Zap, HeartPulse, Users, ChevronRight, MessageSquare } from 'lucide-react'
 import Link from 'next/link'
 import { cn, scrollToSection } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
