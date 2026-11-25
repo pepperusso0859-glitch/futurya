@@ -66,7 +66,7 @@ export function Contact() {
     message: '',
     privacy: false,
   })
-  const [errors, setErrors] = useState<typeof formData>({} as any)
+  const [errors, setErrors] = useState<Partial<typeof formData>>({})
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
@@ -78,7 +78,7 @@ export function Contact() {
   }
 
   const validateForm = (): boolean => {
-    const newErrors: typeof errors = {}
+    const newErrors: Partial<typeof formData> = {}
     if (!formData.name.trim()) newErrors.name = true
     if (!formData.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) newErrors.email = true
     if (!formData.phone.trim()) newErrors.phone = true
