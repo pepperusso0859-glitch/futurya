@@ -1,0 +1,15 @@
+# Futurya - robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://futurya.it/sitemap.xml
+
+# Disallow private/admin areas
+Disallow: /api/
+Disallow: /_next/
+Disallow: /private/
+Disallow: /*.json$
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 10
